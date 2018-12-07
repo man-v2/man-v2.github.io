@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>Python多环境安装配置 | 生活记录点滴</title>
+  <meta name="description" content="python多环境安装配置一、下载安装1. 下载地址  python27下载地址(https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi) python37下载地址,下载Windows x86-64 embeddable zip file(https://www.python.org/ftp/python/3.7.1/py">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python多环境安装配置">
+<meta property="og:url" content="http://www.talkeduai.com.cn/post/6824d28d.html">
+<meta property="og:site_name" content="�����¼���">
+<meta property="og:description" content="python多环境安装配置一、下载安装1. 下载地址  python27下载地址(https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi) python37下载地址,下载Windows x86-64 embeddable zip file(https://www.python.org/ftp/python/3.7.1/py">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-07T03:38:26.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python多环境安装配置">
+<meta name="twitter:description" content="python多环境安装配置一、下载安装1. 下载地址  python27下载地址(https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi) python37下载地址,下载Windows x86-64 embeddable zip file(https://www.python.org/ftp/python/3.7.1/py">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://www.talkeduai.com.cn/post/6824d28d.html">
+  
+    <link rel="alternate" href="/atom.xml" title="�����¼���" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/man-v2" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">SkyOne</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">生活记录点滴</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> ChangSha, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索">
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech="">
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope="" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope="" itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/concept/">concept</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/corpus/">corpus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/concept/" style="font-size: 13px;">concept</a> <a href="/tags/corpus/" style="font-size: 13px;">corpus</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/python/" style="font-size: 14px;">python</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/post/4a17b156.html" class="title">Hello World</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-12-07T05:18:25.789Z" itemprop="datePublished">2018-12-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/post/d95d61c6.html" class="title">git配置多账号</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-12-07T03:17:11.000Z" itemprop="datePublished">2018-12-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/post/fd25fde8.html" class="title">小布什给老布什悼念词</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-12-07T01:22:33.000Z" itemprop="datePublished">2018-12-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/post/321603c.html" class="title">专业术语清单</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-12-06T10:00:02.000Z" itemprop="datePublished">2018-12-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/post/3efac366.html" class="title">learn-markdown</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-12-03T06:46:53.000Z" itemprop="datePublished">2018-12-03</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-learn-python-set-env" class="article article-type-post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python多环境安装配置
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/post/6824d28d.html" class="article-date">
+	  <time datetime="2018-12-03T04:50:07.000Z" itemprop="datePublished">2018-12-03</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/python/">python</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/post/6824d28d.html#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <hr>
+<h2 id="python多环境安装配置"><a href="#python多环境安装配置" class="headerlink" title="python多环境安装配置"></a>python多环境安装配置</h2><h3 id="一、下载安装"><a href="#一、下载安装" class="headerlink" title="一、下载安装"></a>一、下载安装</h3><h4 id="1-下载地址"><a href="#1-下载地址" class="headerlink" title="1. 下载地址"></a>1. 下载地址</h4><blockquote>
+<ul>
+<li>python27下载地址(<a href="https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi" target="_blank" rel="noopener">https://www.python.org/ftp/python/2.7.15/python-2.7.15.amd64.msi</a>)</li>
+<li>python37下载地址,下载Windows x86-64 embeddable zip file(<a href="https://www.python.org/ftp/python/3.7.1/python-3.7.1-embed-amd64.zip" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.7.1/python-3.7.1-embed-amd64.zip</a>)</li>
+</ul>
+</blockquote>
+<h4 id="2-安装顺序"><a href="#2-安装顺序" class="headerlink" title="2. 安装顺序"></a>2. 安装顺序</h4><blockquote>
+<ul>
+<li>python27自动安装<br>执行安装程序进行安装<br>安装完后，在cmd输入python -V, 并显示 “Python 2.7.15”,则成功。<br>安装程序会默认把python27的an安装目录配置到系统变量</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>python37 进行手动安装<br>解压python37,复制程序路径。在我的电脑-属性-高级系统变量-环境变量-高级系统设计，会弹出环境设置的窗口。<br>在下面的系统变量窗口，找到”path”,点击编辑，把python37路径添加到最后。win10直接新增添加。 win7在添加前，输入;来分割路径。<br>eg:&nbsp;&nbsp;  ;c:\python27;c\python37</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>同时把scripts目录也添加到环境变量<br>eg: &nbsp; ;c:\python27\scripts;c\python37\scirpts</li>
+</ul>
+</blockquote>
+<h3 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h3><blockquote>
+<ul>
+<li>修改python3文件名称<br>  先修改python.exe为python3.exe,其他再对照是否需要i需改  <ol><br>  <li>python3.dll</li><br>  <li>python3.exe</li><br>  <li>python37.dll</li><br>  <li>python37_d.dll</li><br>  <li>python37_d.pdb</li><br>  <li>python3_d.dll</li><br>  </ol>
+</li>
+</ul>
+</blockquote>
+<h3 id="三、测试"><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h3><blockquote>
+<ul>
+<li>测试python27<br>  python -V, 打印：Python 2.7.15，则成功</li>
+<li>测试python37<br>  python3 -V, 打印：Python 3.7.15，则成功</li>
+</ul>
+</blockquote>
+<h3 id="四、结束"><a href="#四、结束" class="headerlink" title="四、结束"></a>四、结束</h3><p><br></p>
+<blockquote>
+<p><em>警句：今天只是未来生命中的一天，但你的未来取决于今天做了什么!</em><br><em>联系作者微信：kids-code</em></p>
+</blockquote>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://www.talkeduai.com.cn/post/6824d28d.html" title="Python多环境安装配置" target="_blank" rel="external">http://www.talkeduai.com.cn/post/6824d28d.html</a>
+    </li>
+    
+    <!-- <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li> -->
+    <li class="post-copyright-license">
+        <strong>备案编号： </strong> <a href="http://www.miitbeian.gov.cn">湘ICP备18004545号-1</a>
+      </li>
+  </ul>
+</blockquote>
+<!-- 
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/man-v2" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/man-v2" target="_blank"><span class="text-dark">SkyOne</span><small class="ml-1x">生活记录点滴</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+ -->
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom="">
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/post/3efac366.html" title="learn-markdown"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/post/a1983d88.html" title="python学习入门"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2018 SkyOne
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+</html>
